@@ -29,17 +29,12 @@ struct ContentView: View {
                                 showPopover: $open,
                                 popoverSize: popoverSize,
                                 arrowDirections: [.up],
-                                popoverPosition: CGRect(x: 0, y: 0, width: 0, height: 0),
+                                popoverPosition: CGRect(x: 0, y: 0, width: 0, height: 0), // placeholder values
                                 content: {
                                     // The view you want to anchor your popover to.
-                                    Button(action: {
-                                        self.open.toggle()
-                                        positionY = geo.frame(in: .named("OuterV")).midY
-                                    }) {
-                                        SomeView(positionY: self.positionY)
-                                            .coordinateSpace(name: "OuterV")
-                                    }
-                                    .padding()
+                                    SomeView(geo: geo,
+                                             open: $open,
+                                             positionY: $positionY)
                                 },
                                 popoverContent: {
                                     VStack {
@@ -60,11 +55,21 @@ struct ContentView: View {
 }
 
 struct SomeView: View {
-    let positionY: CGFloat
+    let geo: GeometryProxy
+
+    @Binding var open: Bool
+    @Binding var positionY: CGFloat
 
     var body: some View {
         VStack {
-            Text("Tap me - \(positionY)")
+            Button(action: {
+                self.open.toggle()
+                positionY = geo.frame(in: .named("OuterV")).midY
+            }) {
+                Text("Tap me - \(positionY)")
+                    .coordinateSpace(name: "OuterV")
+            }
+            .padding()
         }
     }
 }
