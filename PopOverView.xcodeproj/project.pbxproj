@@ -11,6 +11,7 @@
 		547DE333281377FE00C20EF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547DE332281377FE00C20EF7 /* ContentView.swift */; };
 		547DE335281377FF00C20EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547DE334281377FF00C20EF7 /* Assets.xcassets */; };
 		547DE338281377FF00C20EF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547DE337281377FF00C20EF7 /* Preview Assets.xcassets */; };
+		547DE3422814C27800C20EF7 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = 547DE3412814C27800C20EF7 /* Popovers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547DE3422814C27800C20EF7 /* Popovers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = PopOverView;
+			packageProductDependencies = (
+				547DE3412814C27800C20EF7 /* Popovers */,
+			);
 			productName = PopOverView;
 			productReference = 547DE32D281377FE00C20EF7 /* PopOverView.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 547DE324281377FE00C20EF7;
+			packageReferences = (
+				547DE3402814C27800C20EF7 /* XCRemoteSwiftPackageReference "Popovers" */,
+			);
 			productRefGroup = 547DE32E281377FE00C20EF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		547DE3402814C27800C20EF7 /* XCRemoteSwiftPackageReference "Popovers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Popovers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		547DE3412814C27800C20EF7 /* Popovers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 547DE3402814C27800C20EF7 /* XCRemoteSwiftPackageReference "Popovers" */;
+			productName = Popovers;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 547DE325281377FE00C20EF7 /* Project object */;
 }
